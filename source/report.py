@@ -18,4 +18,4 @@ datos = load_data(1000)
 
 if st.checkbox('Mostrar datos crudos'):
     st.subheader('Datos crudos..')
-    #st.write(datos)
+    st.write(datos)
