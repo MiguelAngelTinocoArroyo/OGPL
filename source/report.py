@@ -5,7 +5,7 @@ from plotly import graph_objects as go
 
 st.title('Reporte de Informe mediante Gráficos')
 
-st.subheader('1.  Cantidad de Número de Repitencias por Año de Ingreso:')
+st.subheader('1. Cantidad de Número de Repitencias por Año de Ingreso:')
 #-------------------------------------------------------------------------------------------
 
 df_1 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv')
@@ -19,6 +19,7 @@ fig_1.update_layout(xaxis_title= 'Año de Ingreso', yaxis_title='Cantidad de Rep
 st.plotly_chart(fig_1) 
 
 # -----------------------------------------------------------------------------------------
+st.subheader('2. Cantidad de Número de Repitencias por Facultad:')
 df_2 = pd.read_csv('./data/REPITENCIAS_POR_FACULTAD.csv')
 fig_2 = px.line(df_2, x= 'Facultad', y=df_2.columns[1:7], width=1000, height=600, markers=True,
                     color_discrete_sequence = px.colors.qualitative.Light24_r)
@@ -77,3 +78,18 @@ fig_6.update_layout(xaxis_title= 'Área Académica', yaxis_title='Cantidad de Po
                         legend_title='Intervalos de Porcentaje')
 
 st.plotly_chart(fig_6)
+# --------------------------------------------------------------------------------------------------------
+
+st.subheader('6. Top 10 de Facultades con mayores Repitencias en total desde el 2017-1 hasta 2022-2:')
+df_7 = pd.read_csv('./data/TOTAL_DE_REPITENCIAS_POR_FACULTAD.csv')
+df_7 = df_7.reset_index(drop=True)
+df_7 = df_7.head(10)
+
+fig_7 = px.line_polar(df_7, r='Total de Repitencias', theta='Facultad',line_close=True,
+                    color_discrete_sequence = px.colors.sequential.RdBu_r)
+fig_7.update_traces(fill ='toself')
+fig_7.update_layout(legend_title='Número de Repitencias')
+fig_7.update_layout(width=900, height=550)
+fig_7.update_layout(margin=dict(t=110))
+
+st.plotly_chart(fig_7)
