@@ -64,3 +64,16 @@ fig_4.add_trace(go.Funnel(name='2da Repitencia', orientation='h',y = df_4['Nombr
 fig_4.add_trace(go.Funnel(name='3ra Repitencia', orientation='h',y = df_4['Nombre de Área'],x = df_4['3ra Repitencia'],
                 marker = {'color': ['teal','teal','teal','teal','teal']}))
 st.plotly_chart(fig_4)
+
+#----------------------------------------------------------------------------------------------------------
+st.subheader('5. Porcentaje de Créditos Aprobados por Área:')
+
+df_6 = pd.read_csv('./data/PORCENTAJE_DE_CREDITOS_APROBADOS_POR_AREA.csv')
+df_6.fillna(0, inplace=True)
+
+fig_6 = px.line(df_6, x= 'Área', y=df_6.columns[1:13], width=1100, height=550, markers=True,
+                    color_discrete_sequence = px.colors.qualitative.Light24_r)
+fig_6.update_layout(xaxis_title= 'Área Académica', yaxis_title='Cantidad de Porcentaje de Créditos Aprobados',
+                        legend_title='Intervalos de Porcentaje')
+
+st.plotly_chart(fig_6)
