@@ -69,27 +69,27 @@ st.plotly_chart(fig_4)
 #----------------------------------------------------------------------------------------------------------
 st.subheader('5. Porcentaje de Créditos Aprobados por Área:')
 
-df_6 = pd.read_csv('./data/PORCENTAJE_DE_CREDITOS_APROBADOS_POR_AREA.csv')
-df_6.fillna(0, inplace=True)
+df_5 = pd.read_csv('./data/PORCENTAJE_DE_CREDITOS_APROBADOS_POR_AREA.csv')
+df_5.fillna(0, inplace=True)
 
-fig_6 = px.line(df_6, x= 'Área', y=df_6.columns[1:13], width=1100, height=550, markers=True,
+fig_5 = px.line(df_5, x= 'Área', y=df_5.columns[1:13], width=1100, height=550, markers=True,
                     color_discrete_sequence = px.colors.qualitative.Light24_r)
-fig_6.update_layout(xaxis_title= 'Área Académica', yaxis_title='Cantidad de Porcentaje de Créditos Aprobados',
+fig_5.update_layout(xaxis_title= 'Área Académica', yaxis_title='Cantidad de Porcentaje de Créditos Aprobados',
                         legend_title='Intervalos de Porcentaje')
 
-st.plotly_chart(fig_6)
+st.plotly_chart(fig_5)
 # --------------------------------------------------------------------------------------------------------
 
-st.subheader('6. Top 10 de Facultades con mayores Repitencias en total desde el 2017-1 hasta 2022-2:')
-df_7 = pd.read_csv('./data/TOTAL_DE_REPITENCIAS_POR_FACULTAD.csv')
-df_7 = df_7.reset_index(drop=True)
-df_7 = df_7.head(10)
+st.subheader('6. Top 10 de Facultades con mayores Repitencias en total 2023-0:')
+df_6 = pd.read_csv('./data/TOTAL_DE_REPITENCIAS_POR_FACULTAD.csv')
+df_6 = df_6.reset_index(drop=True)
+df_6 = df_6.head(10)
 
-fig_7 = px.line_polar(df_7, r='Total de Repitencias', theta='Facultad',line_close=True,
+fig_6 = px.line_polar(df_6, r='Total de Repitencias', theta='Facultad',line_close=True,
                     color_discrete_sequence = px.colors.sequential.RdBu_r)
-fig_7.update_traces(fill ='toself')
-fig_7.update_layout(legend_title='Número de Repitencias')
-fig_7.update_layout(width=900, height=550)
-fig_7.update_layout(margin=dict(t=110))
+fig_6.update_traces(fill ='toself')
+fig_6.update_layout(legend_title='Número de Repitencias')
+fig_6.update_layout(width=900, height=550)
+fig_6.update_layout(margin=dict(t=110))
 
-st.plotly_chart(fig_7)
+st.plotly_chart(fig_6)
