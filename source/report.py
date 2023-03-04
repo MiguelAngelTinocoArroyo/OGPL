@@ -25,3 +25,22 @@ fig_2.update_layout(xaxis_title= 'Facultad', yaxis_title='Cantidad de Repitencia
                         legend_title='Número de Repitencias')
 
 st.plotly_chart(fig_2)
+
+# -----------------------------------------------------------------------------------------
+st.subheader('3. Top 10 de Facultades por Escuela Académicas Profesionales con mayores Repitencias:')
+
+df_3 = pd.read_csv('./data/REPITENCIAS_POR_FACULTAD_Y_EAP.csv')
+df_3.fillna(0, inplace=True)
+
+df_3 = df_3.sort_values('Repitencias',ascending=False)
+df_3 = df_3.reset_index(drop=True)
+df_3 = df_3.head(10)
+
+fig_3 = px.sunburst(df_3, path=['Facultad','Escuela Académica'], values= 'Repitencias', 
+                color_continuous_scale=px.colors.sequential.Cividis_r, 
+                width=1000, height=600, color='Repitencias')
+
+fig_3.update_layout(uniformtext_minsize=12, uniformtext_mode='hide')
+fig_3.update_layout(title_text='Top 10 de Facultades por Escuela Académicas Profesionales con mayores Repitencias', title_x=0.5)
+
+st.plotly_chart(fig_3)
