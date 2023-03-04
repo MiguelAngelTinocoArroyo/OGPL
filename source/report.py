@@ -9,6 +9,7 @@ st.subheader('1.  Cantidad de Número de Repitencias por Año de Ingreso:')
 #-------------------------------------------------------------------------------------------
 
 df_1 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv')
+df_1.fillna(0, inplace=True)
 st.write(df_1) 
 
 fig_1 = px.line(df_1, x = 'Año', y=df_1.columns[1:7], width=900, height=460,markers=True,
@@ -41,6 +42,25 @@ fig_3 = px.sunburst(df_3, path=['Facultad','Escuela Académica'], values= 'Repit
                 width=1000, height=600, color='Repitencias')
 
 fig_3.update_layout(uniformtext_minsize=12, uniformtext_mode='hide')
-fig_3.update_layout(title_text='Top 10 de Facultades por Escuela Académicas Profesionales con mayores Repitencias', title_x=0.5)
 
 st.plotly_chart(fig_3)
+
+# ------------------------------------------------------------------------------------------------------------------
+st.subheader('4. Repitencias por Área:')
+df_4 = pd.read_csv('./data/REPITENCIAS_POR_AREA.csv')
+df_4 = df_4.sort_values('1era Repitencia', ascending=False)
+
+from plotly import graph_objects as go
+
+fig_4 = go.Figure()
+fig_4.update_layout(width=1100, height=500)
+
+fig_4.add_trace(go.Funnel(name='1era Repitencia', orientation='h',y = df_4['Nombre de Área'],x = df_4['1era Repitencia'],
+                marker = {'color': ['deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue']}))
+
+fig_4.add_trace(go.Funnel(name='2da Repitencia', orientation='h',y = df_4['Nombre de Área'],x = df_4['2da Repitencia'],
+                marker = {'color': ['indianred','indianred','indianred','indianred','indianred']}))
+
+fig_4.add_trace(go.Funnel(name='3ra Repitencia', orientation='h',y = df_4['Nombre de Área'],x = df_4['3ra Repitencia'],
+                marker = {'color': ['teal','teal','teal','teal','teal']}))
+st.plotly_chart(fig_4)
