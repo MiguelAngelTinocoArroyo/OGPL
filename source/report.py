@@ -93,3 +93,18 @@ fig_6.update_layout(width=900, height=550)
 fig_6.update_layout(margin=dict(t=110))
 
 st.plotly_chart(fig_6)
+
+# --------------------------------------------------------------------------------------------------------
+st.subheader('7. Top 20 de Cursos con mayor número de Repitencias 2023-0:')
+df_7 = pd.read_csv('./data/REPITENCIAS_POR_CURSO.csv')
+df_7 = df_7.sort_values('Total Repitencias',ascending=False)
+df_7 = df_7.reset_index(drop=True)
+df_7 = df_7.head(20)
+
+fig_7 = px.bar(df_7, y='Total Repitencias', x='Cursos',text_auto = True,
+       orientation = 'v',color = 'Total Repitencias', color_continuous_scale = 'viridis')
+fig_7.update_layout(width=1000, height=650)
+fig_7.update_layout(xaxis_title= 'Cursos', yaxis_title='Cantidad de Repitencias',
+                        legend_title='Cantidad de Repitencias')
+fig_7.update_xaxes(tickangle=28, tickfont=dict(color='white', size=11))
+st.plotly_chart(fig_7)
