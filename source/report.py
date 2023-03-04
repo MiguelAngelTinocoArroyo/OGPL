@@ -9,5 +9,5 @@ st.subheader('1.  Cantidad de Número de Repitencias por Año de Ingreso:')
 #-------------------------------------------------------------------------------------------
 
 
-datos = pd.read_excel('./data/REPITENCIAS_POR_ANIO_INGRESO.xlsx')
+datos = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv')
 st.write(datos) 
