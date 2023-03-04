@@ -5,7 +5,7 @@ from plotly import graph_objects as go
 
 st.title('Reporte de Informe mediante Gráficos')
 
-st.subheader('1. Cantidad de Número de Repitencias por Año de Ingreso:')
+st.subheader('1.  Cantidad de Número de Repitencias por Año de Ingreso:')
 #-------------------------------------------------------------------------------------------
 
 def load_data(nrows):
