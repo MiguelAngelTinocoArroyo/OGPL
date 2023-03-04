@@ -9,5 +9,11 @@ st.subheader('1.  Cantidad de Número de Repitencias por Año de Ingreso:')
 #-------------------------------------------------------------------------------------------
 
 
-datos = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv')
-st.write(datos) 
+df_1 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv')
+st.write(df_1) 
+
+fig_1 = px.line(df_1, x = 'Año', y=df_1.columns[1:7], width=900, height=460,markers=True,
+                    color_discrete_sequence = px.colors.qualitative.Light24)
+fig_1.update_layout(xaxis_title= 'Año de Ingreso', yaxis_title='Cantidad de Repitencias',
+                        legend_title='Número de Repitencias')
+st.plotly_chart(fig_1) 
