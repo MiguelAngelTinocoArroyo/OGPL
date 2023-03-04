@@ -9,7 +9,7 @@ st.subheader('1.  Cantidad de Número de Repitencias por Año de Ingreso:')
 #-------------------------------------------------------------------------------------------
 
 def load_data(nrows):
-    datos = pd.read_excel('./data/REPITENCIAS_POR_ANIO_INGRESO.xlsx')
+    datos = pd.read_excel('../data/REPITENCIAS_POR_ANIO_INGRESO.xlsx')
     datos.fillna(0, inplace=True)
     return datos
 
