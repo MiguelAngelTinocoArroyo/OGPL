@@ -16,7 +16,7 @@ def load_data_1(nrows):
 df_load_state = st.text('Cargando data ...')
 datos_1 = load_data_1(6)
 
-if st.checkbox('Mostrar datos'):
+if st.checkbox('Mostrar datos 1'):
     st.subheader('Datos')
     st.write(datos_1)
 
@@ -40,6 +40,7 @@ def load_data_2(nrows):
     return datos_2
 
 df_2 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv')
+st.write(df_2)
 df_2.fillna(0, inplace=True)
 
 df_load_state = st.text('Cargando data ...')
