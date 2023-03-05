@@ -117,10 +117,23 @@ st.plotly_chart(fig_4)
 # ------------------------------------------------------------------------------------------------------------------
 st.subheader('5. Repitencias por Área:')
 
+@st.cache(allow_output_mutation=True)
+def load_data_5(nrows):
+    datos_5 = pd.read_csv('./data/REPITENCIAS_POR_FACULTAD_Y_EAP.csv', nrows=nrows)
+    datos_5.fillna(0, inplace=True)
+    datos_5 = datos_5.sort_values('Repitencias',ascending=False)
+    return datos_5
+
+df_load_state = st.text('Cargando data ...')
+datos_5 = load_data_5(5)
+
+if st.checkbox('Mostrar datos 5'):
+    st.subheader('Datos')
+    st.write(datos_5)
 
 df_5 = pd.read_csv('./data/REPITENCIAS_POR_AREA.csv')
 df_5 = df_5.sort_values('1era Repitencia', ascending=False)
-st.write(df_5)
+
 from plotly import graph_objects as go
 
 fig_5 = go.Figure()
