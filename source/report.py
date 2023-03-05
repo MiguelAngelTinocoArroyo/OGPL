@@ -15,7 +15,7 @@ def load_data(nrows):
     return datos
 
 df_load_state = st.text('Cargando data ...')
-datos = load_data(1000)
+datos = load_data(20)
 
 
 if st.checkbox('Mostrar datos crudos'):
