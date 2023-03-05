@@ -3,6 +3,7 @@ import plotly.express as px
 import streamlit as st
 from plotly import graph_objects as go
 
+st.set_page_config(layout="wide")
 st.title('Reporte de Informe mediante Gráficos')
 
 # ------------------------------------------------------------------------------------------
