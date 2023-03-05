@@ -8,12 +8,10 @@ st.title('Reporte de Informe mediante Gráficos')
 st.subheader('1. Cantidad de Número de Repitencias por Año de Ingreso:')
 #-------------------------------------------------------------------------------------------
 
-df_1 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv')
-df_1.fillna(0, inplace=True)
-
 @st.cache(allow_output_mutation=True)
 def load_data(nrows):
     df_1 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv', nrows=nrows)
+    df_1.fillna(0, inplace=True)
     return datos
 
 df_load_state = st.text('Cargando data ...')
@@ -24,7 +22,8 @@ if st.checkbox('Mostrar datos crudos'):
     st.subheader('Datos crudos')
     st.write(datos)
 
-st.write(df_1) 
+df_1 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv', nrows=nrows)
+df_1.fillna(0, inplace=True) 
 
 fig_1 = px.line(df_1, x = 'Año', y=df_1.columns[1:7], width=900, height=460,markers=True,
                     color_discrete_sequence = px.colors.qualitative.Light24)
