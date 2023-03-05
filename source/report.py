@@ -41,7 +41,7 @@ def load_data_2(nrows):
 
 df_2 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv')
 df_2.fillna(0, inplace=True)
-st.write(df_2)
+
 df_load_state = st.text('Cargando data ...')
 datos_2 = load_data_2(44)
 
@@ -57,7 +57,22 @@ st.plotly_chart(fig_2)
 
 # -----------------------------------------------------------------------------------------
 st.subheader('3. Cantidad de Número de Repitencias por Facultad:')
+
+
+@st.cache(allow_output_mutation=True)
+def load_data_3(nrows):
+    datos_3 = pd.read_csv('./data/REPITENCIAS_POR_FACULTAD.csv', nrows=nrows)
+    return datos_3
+
+#df_load_state = st.text('Cargando data ...')
+#datos_3 = load_data_2(44)
+
+if st.checkbox('Mostrar datos 2'):
+    st.subheader('Datos')
+    st.write(datos_2)
+
 df_3 = pd.read_csv('./data/REPITENCIAS_POR_FACULTAD.csv')
+st.write(df_3)
 fig_3 = px.line(df_3, x= 'Facultad', y=df_3.columns[1:7], width=1000, height=600, markers=True,
                     color_discrete_sequence = px.colors.qualitative.Light24_r)
 fig_2.update_layout(xaxis_title= 'Facultad', yaxis_title='Cantidad de Repitencias',
