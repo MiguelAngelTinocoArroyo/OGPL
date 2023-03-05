@@ -172,7 +172,7 @@ def load_data_7(nrows):
     return datos_7
 
 df_load_state = st.text('Cargando data ...')
-datos_7 = load_data_4(10)
+datos_7 = load_data_7(10)
 
 if st.checkbox('Mostrar datos 7'):
     st.subheader('Datos')
@@ -184,7 +184,6 @@ df_7 = pd.read_csv('./data/TOTAL_DE_REPITENCIAS_POR_FACULTAD.csv')
 df_7 = df_7.reset_index(drop=True)
 df_7 = df_7.head(10)
  
-
 fig_7 = px.line_polar(df_7, r='Total de Repitencias', theta='Facultad',line_close=True,
                     color_discrete_sequence = px.colors.sequential.RdBu_r)
 fig_7.update_traces(fill ='toself')
