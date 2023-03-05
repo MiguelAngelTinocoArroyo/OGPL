@@ -3,12 +3,12 @@ import plotly.express as px
 import streamlit as st
 from plotly import graph_objects as go
 
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide") # Modo Ancho de Streamlit
 st.title('Reporte de Informe mediante Gráficos')
 
 # ------------------------------------------------------------------------------------------
 st.subheader('1. Repitencias más Críticas por estudiante:')
-
+st.text('Para la siguiente gráfica se tomó un solo curso, el cual presenta maypr número de repitencias en el estudiante.')
 @st.cache(allow_output_mutation=True)
 def load_data_1(nrows):
     datos_1 = pd.read_csv('./data/REPITENCIAS_CRITICAS.csv', nrows=nrows)
