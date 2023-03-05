@@ -23,7 +23,7 @@ st.plotly_chart(fig_1)
 st.subheader('2. Cantidad de Número de Repitencias por Año de Ingreso:')
 
 @st.cache(allow_output_mutation=True)
-def load_data(nrows):
+def load_data_2(nrows):
     datos_2 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv', nrows=nrows)
     datos_2.fillna(0, inplace=True)
     return datos_2
@@ -32,9 +32,9 @@ df_2 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv')
 df_2.fillna(0, inplace=True)
 
 df_load_state = st.text('Cargando data ...')
-datos_2 = load_data(20)
+datos_2 = load_data_2(20)
 
-if st.checkbox('Mostrar datos crudos'):
+if st.checkbox('Mostrar datos'):
     st.subheader('Datos')
     st.write(datos_2)
 
