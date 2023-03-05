@@ -88,6 +88,7 @@ st.subheader('4. Top 10 de Facultades por Escuela Académicas Profesionales con 
 def load_data_4(nrows):
     datos_4 = pd.read_csv('./data/REPITENCIAS_POR_FACULTAD_Y_EAP.csv', nrows=nrows)
     datos_4.fillna(0, inplace=True)
+    datos_4 = datos_4.sort_values('Repitencias',ascending=False)
     return datos_4
 
 df_load_state = st.text('Cargando data ...')
@@ -99,7 +100,6 @@ if st.checkbox('Mostrar datos 4'):
 
 df_4 = pd.read_csv('./data/REPITENCIAS_POR_FACULTAD_Y_EAP.csv')
 df_4.fillna(0, inplace=True)
-st.write(df_4)
 
 df_4 = df_4.sort_values('Repitencias',ascending=False)
 df_4 = df_4.reset_index(drop=True)
