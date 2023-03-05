@@ -8,7 +8,7 @@ st.title('Reporte de Informe mediante Gráficos')
 
 # ------------------------------------------------------------------------------------------
 st.subheader('1. Repitencias más Críticas por estudiante:')
-st.text('Para la siguiente gráfica se tomó un solo curso, el cual presenta maypr número de repitencias en el estudiante.')
+st.text('Para la siguiente gráfica se tomó un solo curso, el cual presenta mayor número de repitencias en el estudiante.')
 @st.cache(allow_output_mutation=True)
 def load_data_1(nrows):
     datos_1 = pd.read_csv('./data/REPITENCIAS_CRITICAS.csv', nrows=nrows)
@@ -174,5 +174,5 @@ fig_8 = px.bar(df_8, y='Total Repitencias', x='Cursos',text_auto = True,
 fig_8.update_layout(width=1000, height=650)
 fig_8.update_layout(xaxis_title= 'Cursos', yaxis_title='Cantidad de Repitencias',
                         legend_title='Cantidad de Repitencias')
-fig_8.update_xaxes(tickangle=28, tickfont=dict(color='white', size=11))
+fig_8.update_xaxes(tickangle=28, tickfont=dict(color='black', size=11))
 st.plotly_chart(fig_8)
