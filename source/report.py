@@ -24,19 +24,19 @@ st.subheader('2. Cantidad de Número de Repitencias por Año de Ingreso:')
 
 @st.cache(allow_output_mutation=True)
 def load_data(nrows):
-    datos = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv', nrows=nrows)
-    datos.fillna(0, inplace=True)
-    return datos
+    datos_2 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv', nrows=nrows)
+    datos_2.fillna(0, inplace=True)
+    return datos_2
 
 df_2 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv')
 df_2.fillna(0, inplace=True)
 
 df_load_state = st.text('Cargando data ...')
-datos = load_data(20)
+datos_2 = load_data(20)
 
 if st.checkbox('Mostrar datos crudos'):
     st.subheader('Datos')
-    st.write(datos)
+    st.write(datos_2)
 
 fig_2 = px.line(df_2, x = 'Año', y=df_2.columns[1:7], width=900, height=460,markers=True,
                     color_discrete_sequence = px.colors.qualitative.Light24)
