@@ -45,9 +45,9 @@ df_2.fillna(0, inplace=True)
 df_load_state = st.text('Cargando data ...')
 datos_2 = load_data_2(20)
 
-if st.checkbox('Mostrar datos'):
-    st.subheader('Datos')
-    st.write(datos_2)
+#if st.checkbox('Mostrar datos'):
+#    st.subheader('Datos')
+#    st.write(datos_2)
 
 fig_2 = px.line(df_2, x = 'Año', y=df_2.columns[1:7], width=900, height=460,markers=True,
                     color_discrete_sequence = px.colors.qualitative.Light24)
