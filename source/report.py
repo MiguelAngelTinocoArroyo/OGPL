@@ -33,7 +33,7 @@ st.plotly_chart(fig_1)
 
 #-------------------------------------------------------------------------------------------
 st.subheader('2. Cantidad de Número de Repitencias por Año de Ingreso:')
-
+st.text('Para la siguiente gráfica se tomó los valores en total de Repitencias')
 @st.cache(allow_output_mutation=True)
 def load_data_2(nrows):
     datos_2 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv', nrows=nrows)
@@ -108,7 +108,7 @@ df_4 = df_4.head(10)
 
 fig_4 = px.sunburst(df_4, path=['Facultad','Escuela Académica'], values= 'Repitencias', 
                 color_continuous_scale=px.colors.sequential.Cividis_r, 
-                width=1000, height=600, color='Repitencias')
+                width=950, height=550, color='Repitencias')
 
 fig_4.update_layout(uniformtext_minsize=12, uniformtext_mode='hide')
 
