@@ -21,7 +21,6 @@ if st.checkbox('Mostrar datos'):
     st.write(datos_1)
 
 df_1 = pd.read_csv('./data/REPITENCIAS_CRITICAS.csv')
-st.write(df_1)
 
 fig_1 = px.line(df_1, x = 'Número de Repitencias', y='Cantidad de Repitencias Críticas', width=700,
                     height=460,markers=True,
