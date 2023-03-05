@@ -15,20 +15,17 @@ def load_data(nrows):
     datos.fillna(0, inplace=True)
     return datos
 
-df_1 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv', nrows=nrows)
+df_1 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv')
 df_1.fillna(0, inplace=True)
 
 df_load_state = st.text('Cargando data ...')
-datos = load_data(len(df_1))
+datos = load_data(5)
 
 df_load_state = st.text('Cargando data ...')
 
 if st.checkbox('Mostrar datos crudos'):
     st.subheader('Datos crudos')
     st.write(datos)
-
-df_1 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv', nrows=nrows)
-df_1.fillna(0, inplace=True) 
 
 fig_1 = px.line(df_1, x = 'Año', y=df_1.columns[1:7], width=900, height=460,markers=True,
                     color_discrete_sequence = px.colors.qualitative.Light24)
