@@ -165,6 +165,21 @@ st.plotly_chart(fig_6)
 
 st.subheader('7. Top 10 de Facultades con mayores Repitencias en total 2023-0:')
 
+@st.cache(allow_output_mutation=True)
+def load_data_7(nrows):
+    datos_7 = pd.read_csv('./data/REPITENCIAS_POR_FACULTAD_Y_EAP.csv', nrows=nrows)
+    datos_7 = datos_7.sort_values('Total de Repitencias',ascending=False)
+    datos_7 = datos_7.reset_index(drop=True)
+    return datos_7
+
+df_load_state = st.text('Cargando data ...')
+datos_7 = load_data_7(10)
+
+if st.checkbox('Mostrar datos 7'):
+    st.subheader('Datos')
+    st.write(datos_7)
+
+
 
 df_7 = pd.read_csv('./data/TOTAL_DE_REPITENCIAS_POR_FACULTAD.csv')
 df_7 = df_7.reset_index(drop=True)
