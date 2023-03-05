@@ -205,11 +205,11 @@ def load_data_9(nrows):
     return datos_9
 
 df_load_state = st.text('Cargando data ...')
-datos_9 = load_data_9(20)
+datos_10 = load_data_9(20)
 
 if st.checkbox('Mostrar datos 8'):
     st.subheader('Datos')
-    st.write(datos_9)
+    st.write(datos_10)
 
 
 
