@@ -84,8 +84,10 @@ st.plotly_chart(fig_3)
 # -----------------------------------------------------------------------------------------
 st.subheader('4. Top 10 de Facultades por Escuela Académicas Profesionales con mayores Repitencias:')
 
+
 df_4 = pd.read_csv('./data/REPITENCIAS_POR_FACULTAD_Y_EAP.csv')
 df_4.fillna(0, inplace=True)
+st.write(df_4)
 
 df_4 = df_4.sort_values('Repitencias',ascending=False)
 df_4 = df_4.reset_index(drop=True)
