@@ -18,7 +18,7 @@ df_1 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv')
 df_1.fillna(0, inplace=True)
 
 df_load_state = st.text('Cargando data ...')
-datos = load_data(5)
+datos = load_data(20)
 
 if st.checkbox('Mostrar datos crudos'):
     st.subheader('Datos crudos')
