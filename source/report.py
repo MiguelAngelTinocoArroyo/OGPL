@@ -10,8 +10,8 @@ st.subheader('1. Cantidad de Número de Repitencias por Año de Ingreso:')
 
 @st.cache(allow_output_mutation=True)
 def load_data(nrows):
-    datos_1 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv', nrows=nrows)
-    datos_1.fillna(0, inplace=True)
+    datos = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv', nrows=nrows)
+    datos.fillna(0, inplace=True)
     return datos
 
 df_1 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv')
