@@ -64,12 +64,12 @@ def load_data_3(nrows):
     datos_3 = pd.read_csv('./data/REPITENCIAS_POR_FACULTAD.csv', nrows=nrows)
     return datos_3
 
-#df_load_state = st.text('Cargando data ...')
-#datos_3 = load_data_2(44)
+df_load_state = st.text('Cargando data ...')
+datos_3 = load_data_2(44)
 
-if st.checkbox('Mostrar datos 2'):
+if st.checkbox('Mostrar datos 3'):
     st.subheader('Datos')
-    st.write(datos_2)
+    st.write(datos_3)
 
 df_3 = pd.read_csv('./data/REPITENCIAS_POR_FACULTAD.csv')
 st.write(df_3)
