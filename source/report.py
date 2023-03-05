@@ -197,19 +197,19 @@ st.subheader('8. Top 20 de Cursos con mayor número de Repitencias 2023-0:')
 
 
 @st.cache(allow_output_mutation=True)
-def load_data_8(nrows):
-    datos_8 = pd.read_csv('./data/REPITENCIAS_POR_CURSO.csv', nrows=nrows)
-    datos_8 = datos_8.sort_values('Total Repitencias',ascending=False)
+def load_data_9(nrows):
+    datos_9 = pd.read_csv('./data/REPITENCIAS_POR_CURSO.csv', nrows=nrows)
+    datos_9 = datos_9.sort_values('Total Repitencias',ascending=False)
     #datos_8 = datos_8.reset_index(drop=True)
     #datos_8 = datos_8.head(20)
-    return datos_8
+    return datos_9
 
 df_load_state = st.text('Cargando data ...')
-datos_8 = load_data_8(20)
+datos_9 = load_data_9(20)
 
 if st.checkbox('Mostrar datos 8'):
     st.subheader('Datos')
-    st.write(datos_8)
+    st.write(datos_9)
 
 
 
