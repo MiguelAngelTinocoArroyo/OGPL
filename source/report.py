@@ -8,10 +8,22 @@ st.title('Reporte de Informe mediante Gráficos')
 # ------------------------------------------------------------------------------------------
 st.subheader('1. Repitencias más Críticas por estudiante:')
 
+@st.cache(allow_output_mutation=True)
+def load_data_1(nrows):
+    datos_1 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv', nrows=nrows)
+    return datos_1
+
+df_load_state = st.text('Cargando data ...')
+datos_1 = load_data_1(6)
+
+if st.checkbox('Mostrar datos'):
+    st.subheader('Datos')
+    st.write(datos_1)
+
 df_1 = pd.read_csv('./data/REPITENCIAS_CRITICAS.csv')
 st.write(df_1)
 
-fig_1 = px.line(df_1, x = 'Número de Repitencias', y='Cantidad de Repitencias Críticas', width=900,
+fig_1 = px.line(df_1, x = 'Número de Repitencias', y='Cantidad de Repitencias Críticas', width=700,
                     height=460,markers=True,
                     color_discrete_sequence = px.colors.qualitative.Light24)
 
