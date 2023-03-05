@@ -11,8 +11,11 @@ st.subheader('1. Repitencias más Críticas:')
 df_0 = pd.read_csv('./data/REPITENCIAS_CRITICAS.csv')
 st.write(df_0)
 
-fig_0 = px.line(df_0, x = 'Número de Repitencias', y='Cantidad de Repitencias Críticas', width=900, height=460,markers=True,
+fig_0 = px.line(df_0, x = 'Número de Repitencias', y='Cantidad de Repitencias Críticas', width=900,
+                    height=460,markers=True,
                     color_discrete_sequence = px.colors.qualitative.Light24)
+
+fig_0.update_traces(line_color='#0000ff', line_width=5)
 fig_0.update_layout(xaxis_title= 'Número de Repitencias', yaxis_title='Cantidad de Repitencias')
 st.plotly_chart(fig_0) 
 
