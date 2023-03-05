@@ -5,8 +5,15 @@ from plotly import graph_objects as go
 
 st.title('Reporte de Informe mediante Gráficos')
 
-st.subheader('1. Cantidad de Número de Repitencias por Año de Ingreso:')
+# ------------------------------------------------------------------------------------------
+df_0 = pd.read_csv('./data/REPITENCIAS_CRITICAS.csv')
+st.write(df_0)
+
+
+
+
 #-------------------------------------------------------------------------------------------
+st.subheader('1. Cantidad de Número de Repitencias por Año de Ingreso:')
 
 @st.cache(allow_output_mutation=True)
 def load_data(nrows):
@@ -21,7 +28,7 @@ df_load_state = st.text('Cargando data ...')
 datos = load_data(20)
 
 if st.checkbox('Mostrar datos crudos'):
-    st.subheader('Datos crudos')
+    st.subheader('Datos')
     st.write(datos)
 
 fig_1 = px.line(df_1, x = 'Año', y=df_1.columns[1:7], width=900, height=460,markers=True,
