@@ -9,14 +9,18 @@ st.subheader('1. Cantidad de Número de Repitencias por Año de Ingreso:')
 #-------------------------------------------------------------------------------------------
 
 @st.cache(allow_output_mutation=True)
+
 def load_data(nrows):
     df_1 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv', nrows=nrows)
     df_1.fillna(0, inplace=True)
     return datos
+df_1 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv', nrows=nrows)
+df_1.fillna(0, inplace=True)
 
 df_load_state = st.text('Cargando data ...')
-datos = load_data(20)
+datos = load_data(len(df_1))
 
+df_load_state = st.text('Cargando data ...')
 
 if st.checkbox('Mostrar datos crudos'):
     st.subheader('Datos crudos')
