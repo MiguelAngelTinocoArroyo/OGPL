@@ -80,7 +80,7 @@ df_4 = df_4.sort_values('1era Repitencia', ascending=False)
 from plotly import graph_objects as go
 
 fig_4 = go.Figure()
-fig_4.update_layout(width=1100, height=500)
+fig_4.update_layout(width=1000, height=500)
 
 fig_4.add_trace(go.Funnel(name='1era Repitencia', orientation='h',y = df_4['Nombre de Área'],x = df_4['1era Repitencia'],
                 marker = {'color': ['deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue']}))
