@@ -24,9 +24,9 @@ if st.checkbox('Mostrar datos 1'):
 df_1 = pd.read_csv('./data/REPITENCIAS_CRITICAS.csv')
 
 fig_1 = px.line(df_1, x = 'Número de Repitencias', y='Cantidad de Repitencias Críticas', width=700,
-                    height=460,markers=True, text = 'Cantidad de Repitencias Críticas',
+                    height=460,markers=True, 
                     color_discrete_sequence = px.colors.qualitative.Light24)
-fig_1.update_traces(textposition = 'top center')
+
 fig_1.update_traces(line_color='#0000ff')
 fig_1.update_layout(xaxis_title= 'Número de Repitencias', yaxis_title='Cantidad de Repitencias')
 st.plotly_chart(fig_1) 
