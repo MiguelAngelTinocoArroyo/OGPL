@@ -24,7 +24,7 @@ if st.checkbox('Mostrar datos 1'):
 df_1 = pd.read_csv('./data/REPITENCIAS_CRITICAS.csv')
 
 fig_1 = px.line(df_1, x = 'Número de Repitencias', y='Cantidad de Repitencias Críticas', width=700,
-                    height=460,markers=True, 
+                    height=460,markers=True, text = 'Cantidad de Repitencias Críticas',
                     color_discrete_sequence = px.colors.qualitative.Light24)
 
 fig_1.update_traces(line_color='#0000ff')
