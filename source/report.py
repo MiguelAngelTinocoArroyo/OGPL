@@ -27,7 +27,7 @@ fig_1 = px.line(df_1, x = 'Número de Repitencias', y='Cantidad de Repitencias C
                     height=460,markers=True, text = 'Cantidad de Repitencias Críticas',
                     color_discrete_sequence = px.colors.qualitative.Light24)
 
-fig_1.update_traces(line_color='#0000ff')
+fig_1.update_traces(line_color='#F39C12')
 fig_1.update_layout(xaxis_title= 'Número de Repitencias', yaxis_title='Cantidad de Repitencias')
 fig_1.update_traces(textposition = 'top center')
 st.plotly_chart(fig_1) 
