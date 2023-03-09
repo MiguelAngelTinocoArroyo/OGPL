@@ -250,3 +250,18 @@ fig_9.update_xaxes(showticklabels=False, title_text='Invictos', row=1, col=2 ,ra
 
 fig_9.update_layout(width=1100, height=650)
 st.plotly_chart(fig_9)
+
+### -------------------------------------------------------------------------------------
+
+st.subheader('10. Intervalos de Porcentajes por crédito aprobados:')
+
+df_10 = pd.read_csv('./data/PERMANENCIA_ANIO_INGRESO.csv')
+df_10.fillna(0, inplace=True)
+st.write(df_9)
+
+#fig_10 = px.line(df_6, x= 'Área Académica', y=df_6.columns[1:8], width=1100, height=550, markers=True,
+#                    color_discrete_sequence = px.colors.qualitative.Light24_r)
+#fig_10.update_layout(xaxis_title= 'Área Académica', yaxis_title='Cantidad de Porcentaje de Créditos Aprobados',
+#                       legend_title='Intervalos de Porcentaje')
+
+#st.plotly_chart(fig_10)
