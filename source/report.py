@@ -28,7 +28,7 @@ fig_1 = px.line(df_1, x = 'Número de Repitencias', y='Cantidad de Repitencias C
                     color_discrete_sequence = px.colors.qualitative.Light24)
 
 fig_1.update_traces(line_color='#F39C12')
-fig_1.update_layout(xaxis_title= 'Estudiantes', yaxis_title='Cantidad de Repitencias')
+fig_1.update_layout(xaxis_title= 'Cantidad de Repitencias', yaxis_title='Estudiantes')
 fig_1.update_traces(textposition = 'top center')
 st.plotly_chart(fig_1) 
 
@@ -78,7 +78,7 @@ df_3.fillna(0, inplace=True)
 
 fig_3 = px.line(df_3, x= 'Facultad', y=df_3.columns[1:7], width=1000, height=600, markers=True,
                     color_discrete_sequence = px.colors.qualitative.Light24_r)
-fig_2.update_layout(xaxis_title= 'Facultad', yaxis_title='Cantidad de Repitencias',
+fig_3.update_layout(xaxis_title= 'Facultad', yaxis_title='Cantidad de Repitencias',
                         legend_title='Número de Repitencias')
 
 st.plotly_chart(fig_3)
