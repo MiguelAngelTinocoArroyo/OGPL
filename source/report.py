@@ -259,7 +259,7 @@ df_10 = pd.read_csv('./data/PERMANENCIA_ANIO_INGRESO.csv')
 df_10.fillna(0, inplace=True)
 st.write(df_10)
 
-fig_10 = px.line(df_6, x= 'Estado de Permanencia', y=df_6.columns[1:8], width=1100, height=550, markers=True,
+fig_10 = px.line(df_10, x= 'Estado de Permanencia', y=df_6.columns[1:8], width=1100, height=550, markers=True,
                     color_discrete_sequence = px.colors.qualitative.Light24_r)
 fig_10.update_layout(xaxis_title= 'Área Académica', yaxis_title='Cantidad de Porcentaje de Créditos Aprobados',
                        legend_title='Intervalos de Porcentaje')
