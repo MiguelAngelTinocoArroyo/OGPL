@@ -210,3 +210,10 @@ fig_8.update_layout(xaxis_title= 'Cursos', yaxis_title='Cantidad de Repitencias'
                         legend_title='Cantidad de Repitencias')
 fig_8.update_xaxes(tickangle=28, tickfont=dict(color='black', size=11))
 st.plotly_chart(fig_8)
+
+# -------------------------------------------------------------------------------------
+
+st.subheader('9. Cantidad de estudiantes invictos vs repitentes:')
+
+df_9 = pd.read_csv('./data/INVICTOS_VS_REPITENTES.csv')
+st.write(df_9)
