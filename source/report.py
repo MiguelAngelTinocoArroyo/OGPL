@@ -157,7 +157,7 @@ df_6 = pd.read_csv('./data/PORCENTAJE_DE_CREDITOS_APROBADOS_POR_AREA.csv')
 df_6.fillna(0, inplace=True)
 st.write(df_6)
 
-fig_6 = px.line(df_6, x= 'Área', y=df_6.columns[1:8], width=1100, height=550, markers=True,
+fig_6 = px.line(df_6, x= 'Área Académica', y=df_6.columns[1:8], width=1100, height=550, markers=True,
                     color_discrete_sequence = px.colors.qualitative.Light24_r)
 fig_6.update_layout(xaxis_title= 'Área Académica', yaxis_title='Cantidad de Porcentaje de Créditos Aprobados',
                         legend_title='Intervalos de Porcentaje')
