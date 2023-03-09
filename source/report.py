@@ -217,3 +217,35 @@ st.subheader('9. Cantidad de estudiantes invictos vs repitentes:')
 
 df_9 = pd.read_csv('./data/INVICTOS_VS_REPITENTES.csv')
 st.write(df_9)
+
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+fig_9 = make_subplots(rows=1, cols=2, specs=[[{}, {}]], shared_xaxes=False,
+                    shared_yaxes=True, horizontal_spacing=0)
+
+fig_9.append_trace(go.Bar(x=df_9['Repitentes'],
+                     y    = df_9['Facultad'], 
+                     text = df_9['Repitentes'].map('{:,.0f}'.format), #Display the numbers with thousands separators in hover-over tooltip 
+                     textposition='inside',
+                     orientation='h', 
+                     width=0.7, 
+                     showlegend=False, 
+                     marker_color='cyan'), 
+                     1, 1) # 1,1 represents row 1 column 1 in the plot grid
+
+fig_9.append_trace(go.Bar(x = df_9['Invictos'],
+                        y = df_9['Facultad'], 
+                     text=df_9['Invictos'].map('{:,.0f}'.format),
+                     textposition='inside',
+                     orientation='h', 
+                     width=0.7, 
+                     showlegend=False, 
+                     marker_color='DarkSlateGrey'), 
+                     1, 2) # 1,2 represents row 1 column 2 in the plot grid
+
+fig_9.update_xaxes(showticklabels=False, title_text='Repitentes', row=1, col=1, range=[2350,0])
+fig_9.update_xaxes(showticklabels=False, title_text='Invictos', row=1, col=2 ,range=[0,2350])     
+
+fig_9.update_layout(width=1100, height=650)
+st.plotly_chart(fig_9)
