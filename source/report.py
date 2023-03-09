@@ -151,7 +151,7 @@ fig_5.add_trace(go.Funnel(name='3ra Repitencia', orientation='h',y = df_5['Nombr
 st.plotly_chart(fig_5)
 
 #----------------------------------------------------------------------------------------------------------
-st.subheader('6. Porcentaje de Créditos Aprobados por Área:')
+st.subheader('6. Intervalos de Porcentajes por crédito aprobados:')
 
 df_6 = pd.read_csv('./data/PORCENTAJE_DE_CREDITOS_APROBADOS_POR_AREA.csv')
 df_6.fillna(0, inplace=True)
