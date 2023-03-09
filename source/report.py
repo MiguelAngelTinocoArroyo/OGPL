@@ -84,7 +84,7 @@ fig_3.update_layout(xaxis_title= 'Facultad', yaxis_title='Cantidad de Repitencia
 st.plotly_chart(fig_3)
 
 # -----------------------------------------------------------------------------------------
-st.subheader('4. Top 10 de Facultades por Escuela Académicas Profesionales con mayores Repitencias:')
+st.subheader('4. Top 10 de Nombre de Programa con mayores Repitencias:')
 
 @st.cache(allow_output_mutation=True)
 def load_data_4(nrows):
