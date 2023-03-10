@@ -177,7 +177,7 @@ fig_6.update_layout(xaxis_title= 'Área Académica', yaxis_title='Cantidad de Po
 st.plotly_chart(fig_6)
 # --------------------------------------------------------------------------------------------------------
 
-st.subheader('7.  Top 10 de Facultades con mayores Repitencias:')
+st.subheader('7. Top 10 de Facultades con mayores Repitencias:')
 
 @st.cache(allow_output_mutation=True)
 def load_data_7(nrows):
@@ -194,6 +194,7 @@ if st.checkbox('Mostrar datos 7'):
     st.write(datos_7)
 
 df_7 = pd.read_csv('./data/TOTAL_DE_REPITENCIAS_POR_FACULTAD.csv')
+df_7 = df_7.sort_values('Repitencias',ascending=False)
 df_7 = df_7.reset_index(drop=True)
 df_7 = df_7.head(10)
  
@@ -214,7 +215,6 @@ def load_data_8(nrows):
     datos_8 = pd.read_csv('./data/REPITENCIAS_POR_CURSO.csv', nrows=nrows)
     datos_8 = datos_8.sort_values('Total Repitencias',ascending=False)
     datos_8 = datos_8.reset_index(drop=True)
-    datos_8 = datos_8.head(20)
     return datos_8
 
 df_load_state = st.text('Cargando data ....')
