@@ -260,9 +260,3 @@ df_10 = pd.read_csv('./data/PERMANENCIA_ANIO_INGRESO.csv')
 df_10.fillna(0, inplace=True)
 st.write(df_10)
 
-fig_10 = px.line(df_10, x= 'Estado de Permanencia', y=df_10.columns[1:8], width=950, height=550, markers=True,
-                    color_discrete_sequence = px.colors.qualitative.Light24_r)
-fig_10.update_layout(xaxis_title= 'Estado de Permanencia', yaxis_title='Estudiantes',
-                       legend_title='Intervalo de Años')
-
-st.plotly_chart(fig_10)
