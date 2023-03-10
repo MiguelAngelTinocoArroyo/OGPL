@@ -242,7 +242,6 @@ if st.checkbox('Mostrar datos 7'):
     st.write(datos_9)
 
 
-
 df_9 = pd.read_csv('./data/INVICTOS_VS_REPITENTES.csv')
 st.write(df_9)
 
