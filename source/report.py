@@ -213,8 +213,8 @@ st.subheader('8. Top 20 de Cursos con mayor número de Repitencias:')
 def load_data_8(nrows):
     datos_8 = pd.read_csv('./data/REPITENCIAS_POR_CURSO.csv', nrows=nrows)
     datos_8 = datos_8.sort_values('Total Repitencias',ascending=False)
-    datos_8 = datos_8.head(20)
     datos_8 = datos_8.reset_index(drop=True)
+    datos_8 = datos_8.head(20)
     return datos_8
 
 df_load_state = st.text('Cargando data ....')
