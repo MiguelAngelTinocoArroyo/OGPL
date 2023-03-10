@@ -18,7 +18,7 @@ df_load_state = st.text('Cargando data ...')
 datos_1 = load_data_1(6)
 
 if st.checkbox('Mostrar datos 1'):
-    st.subheader('Datos')
+    st.subheader('Datos 1')
     st.write(datos_1)
 
 df_1 = pd.read_csv('./data/REPITENCIAS_CRITICAS.csv')
@@ -48,7 +48,7 @@ df_load_state = st.text('Cargando data ...')
 datos_2 = load_data_2(44)
 
 if st.checkbox('Mostrar datos 2'):
-    st.subheader('Datos')
+    st.subheader('Datos 2')
     st.write(datos_2)
 
 fig_2 = px.line(df_2, x = 'Año', y=df_2.columns[1:7], width=900, height=460,markers=True,
@@ -69,7 +69,7 @@ df_load_state = st.text('Cargando data ...')
 datos_3 = load_data_3(20)
 
 if st.checkbox('Mostrar datos 3'):
-    st.subheader('Datos')
+    st.subheader('Datos 3')
     st.write(datos_3)
 
 df_3 = pd.read_csv('./data/REPITENCIAS_POR_FACULTAD.csv')
@@ -96,7 +96,7 @@ df_load_state = st.text('Cargando data ...')
 datos_4 = load_data_4(66)
 
 if st.checkbox('Mostrar datos 4'):
-    st.subheader('Datos')
+    st.subheader('Datos 4')
     st.write(datos_4)
 
 df_4 = pd.read_csv('./data/REPITENCIAS_POR_FACULTAD_Y_EAP.csv')
@@ -128,7 +128,7 @@ df_load_state = st.text('Cargando data ...')
 datos_5 = load_data_5(5)
 
 if st.checkbox('Mostrar datos 5'):
-    st.subheader('Datos')
+    st.subheader('Datos 5')
     st.write(datos_5)
 
 df_5 = pd.read_csv('./data/REPITENCIAS_POR_AREA.csv')
@@ -166,13 +166,8 @@ if st.checkbox('Mostrar datos 6'):
     st.subheader('Datos 6')
     st.write(datos_6)
 
-
-
-
-
 df_6 = pd.read_csv('./data/PORCENTAJE_DE_CREDITOS_APROBADOS_POR_AREA.csv')
 df_6.fillna(0, inplace=True)
-st.write(df_6)
 
 fig_6 = px.line(df_6, x= 'Área Académica', y=df_6.columns[1:8], width=1100, height=550, markers=True,
                     color_discrete_sequence = px.colors.qualitative.Light24_r)
@@ -213,6 +208,21 @@ st.plotly_chart(fig_7)
 
 # --------------------------------------------------------------------------------------------------------
 st.subheader('8. Top 20 de Cursos con mayor número de Repitencias:')
+
+@st.cache(allow_output_mutation=True)
+def load_data_8(nrows):
+    datos_8 = pd.read_csv('./data/REPITENCIAS_POR_CURSO.csv', nrows=nrows)
+    datos_8 = datos_8.sort_values('Total Repitencias',ascending=False)
+    datos_8 = datos_8.reset_index(drop=True)
+    return datos_8
+
+df_load_state = st.text('Cargando data ...')
+datos_8 = load_data_8(20)
+
+if st.checkbox('Mostrar datos 8'):
+    st.subheader('Datos 8')
+    st.write(datos_8)
+
 
 df_8 = pd.read_csv('./data/REPITENCIAS_POR_CURSO.csv')
 df_8 = df_8.sort_values('Total Repitencias',ascending=False)
