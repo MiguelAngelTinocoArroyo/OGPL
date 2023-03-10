@@ -89,7 +89,6 @@ st.subheader('4. Top 10 de Nombre de Programa con mayores Repitencias:')
 @st.cache(allow_output_mutation=True)
 def load_data_4(nrows):
     datos_4 = pd.read_csv('./data/REPITENCIAS_POR_FACULTAD_Y_EAP.csv', nrows=nrows)
-    datos_4.fillna(0, inplace=True)
     datos_4 = datos_4.sort_values('Repitencias',ascending=False)
     return datos_4
 
@@ -107,7 +106,7 @@ df_4 = df_4.sort_values('Repitencias',ascending=False)
 df_4 = df_4.reset_index(drop=True)
 df_4 = df_4.head(10)
 
-fig_4 = px.sunburst(df_4, path=['Facultad','Escuela Académica'], values= 'Repitencias', 
+fig_4 = px.sunburst(df_4, path=['Facultad','Nombre Programa'], values= 'Repitencias', 
                 color_continuous_scale=px.colors.sequential.Cividis_r, 
                 width=950, height=550, color='Repitencias')
 
