@@ -122,7 +122,7 @@ st.subheader('5. Repitencias por Área:')
 def load_data_5(nrows):
     datos_5 = pd.read_csv('./data/REPITENCIAS_POR_AREA.csv', nrows=nrows)
     datos_5.fillna(0, inplace=True)
-    datos_5 = datos_5.sort_values('Primera repitencia',ascending=False)
+    datos_5 = datos_5.sort_values('1 repitencia',ascending=False)
     return datos_5
 
 df_load_state = st.text('Cargando data ...')
@@ -133,7 +133,7 @@ if st.checkbox('Mostrar datos 5'):
     st.write(datos_5)
 
 df_5 = pd.read_csv('./data/REPITENCIAS_POR_AREA.csv')
-df_5 = df_5.sort_values('Primera repitencia', ascending=False)
+df_5 = df_5.sort_values('1 repitencia', ascending=False)
 
 from plotly import graph_objects as go
 
@@ -143,7 +143,7 @@ fig_5.update_layout(width=1100, height=500)
 fig_5.add_trace(go.Funnel(name='Primera repitencia', orientation='h',y = df_5['Área'],x = df_5['Primera repitencia'],
                 marker = {'color': ['deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue']}))
 
-fig_5.add_trace(go.Funnel(name='Segunda repitenci', orientation='h',y = df_5['Área'],x = df_5['Segunda repitencia'],
+fig_5.add_trace(go.Funnel(name='Segunda repitencia', orientation='h',y = df_5['Área'],x = df_5['Segunda repitencia'],
                 marker = {'color': ['indianred','indianred','indianred','indianred','indianred']}))
 
 fig_5.add_trace(go.Funnel(name='Tercera repitencia', orientation='h',y = df_5['Área'],x = df_5['Tercera repitencia'],
