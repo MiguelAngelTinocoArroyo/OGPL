@@ -181,7 +181,7 @@ if st.checkbox('Mostrar datos 7'):
     st.subheader('Datos')
     st.write(datos_7)
 
-df_7 = pd.read_csv('./data/TOTAL_DE_REPITENCIAS_POR_FACULTADes.csv')
+df_7 = pd.read_csv('./data/TOTAL_DE_REPITENCIAS_POR_FACULTAD.csv')
 df_7 = df_7.reset_index(drop=True)
 df_7 = df_7.head(10)
  
