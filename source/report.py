@@ -106,7 +106,7 @@ df_4 = df_4.sort_values('Repitencias',ascending=False)
 df_4 = df_4.reset_index(drop=True)
 df_4 = df_4.head(10)
 
-fig_4 = px.sunburst(df_4, path=['Facultad','Nombre Programa'], values= 'Repitencias', 
+fig_4 = px.sunburst(df_4, path=['Facultad','Nombre de Programa'], values= 'Repitencias', 
                 color_continuous_scale=px.colors.sequential.Cividis_r, 
                 width=950, height=550, color='Repitencias')
 
