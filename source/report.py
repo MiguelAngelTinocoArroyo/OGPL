@@ -63,7 +63,6 @@ st.subheader('3. Cantidad de Número de Repitencias por Facultad:')
 @st.cache(allow_output_mutation=True)
 def load_data_3(nrows):
     datos_3 = pd.read_csv('./data/REPITENCIAS_POR_FACULTAD.csv', nrows=nrows)
-    datos_3.fillna(0, inplace=True)
     return datos_3
 
 df_load_state = st.text('Cargando data ...')
