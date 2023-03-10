@@ -152,6 +152,24 @@ st.plotly_chart(fig_5)
 #----------------------------------------------------------------------------------------------------------
 st.subheader('6. Intervalos de Porcentajes por crédito aprobados:')
 
+@st.cache(allow_output_mutation=True)
+def load_data_6(nrows):
+    datos_6 = pd.read_csv('./data/PORCENTAJE_DE_CREDITOS_APROBADOS_POR_AREA.csv', nrows=nrows)
+    datos_6.fillna(0, inplace=True)
+    datos_6 = datos_6.sort_values('Primera repitencia',ascending=False)
+    return datos_6
+
+df_load_state = st.text('Cargando data ...')
+datos_6 = load_data_6(5)
+
+if st.checkbox('Mostrar datos 6'):
+    st.subheader('Datos 6')
+    st.write(datos_6)
+
+
+
+
+
 df_6 = pd.read_csv('./data/PORCENTAJE_DE_CREDITOS_APROBADOS_POR_AREA.csv')
 df_6.fillna(0, inplace=True)
 st.write(df_6)
@@ -177,7 +195,7 @@ df_load_state = st.text('Cargando data ...')
 datos_7 = load_data_7(10)
 
 if st.checkbox('Mostrar datos 7'):
-    st.subheader('Datos')
+    st.subheader('Datos 7')
     st.write(datos_7)
 
 df_7 = pd.read_csv('./data/TOTAL_DE_REPITENCIAS_POR_FACULTAD.csv')
