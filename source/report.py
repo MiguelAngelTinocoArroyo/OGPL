@@ -167,7 +167,7 @@ if st.checkbox('Mostrar datos 6'):
     st.write(datos_6)
 
 df_6 = pd.read_csv('./data/PORCENTAJE_DE_CREDITOS_APROBADOS_POR_AREA.csv')
-df_6.fillna(0, inplace=True)
+#df_6.fillna(0, inplace=True)
 
 fig_6 = px.line(df_6, x= 'Área Académica', y=df_6.columns[1:8], width=1100, height=550, markers=True,
                     color_discrete_sequence = px.colors.qualitative.Light24_r)
