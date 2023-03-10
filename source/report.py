@@ -165,7 +165,7 @@ fig_6.update_layout(xaxis_title= 'Área Académica', yaxis_title='Cantidad de Po
 st.plotly_chart(fig_6)
 # --------------------------------------------------------------------------------------------------------
 
-st.subheader('7. Top 10 de Facultades con mayores Repitencias en total 2023-0:')
+st.subheader('7. Top 10 de Facultades con mayores Repitencias en total:')
 
 @st.cache(allow_output_mutation=True)
 def load_data_7(nrows):
@@ -195,7 +195,7 @@ fig_7.update_layout(margin=dict(t=110))
 st.plotly_chart(fig_7)
 
 # --------------------------------------------------------------------------------------------------------
-st.subheader('8. Top 20 de Cursos con mayor número de Repitencias 2023-0:')
+st.subheader('8. Top 20 de Cursos con mayor número de Repitencias:')
 
 df_8 = pd.read_csv('./data/REPITENCIAS_POR_CURSO.csv')
 df_8 = df_8.sort_values('Total Repitencias',ascending=False)
