@@ -90,6 +90,8 @@ st.subheader('4. Top 10 de Nombre de Programa con mayores Repitencias:')
 def load_data_4(nrows):
     datos_4 = pd.read_csv('./data/REPITENCIAS_POR_FACULTAD_Y_EAP.csv', nrows=nrows)
     datos_4 = datos_4.sort_values('Repitencias',ascending=False)
+    datos_4 = datos_4.reset_index(drop=True)
+    datos_4 = datos_4.head(10)
     return datos_4
 
 df_load_state = st.text('Cargando data ...')
