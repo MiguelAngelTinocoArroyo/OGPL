@@ -122,7 +122,7 @@ st.subheader('5. Repitencias por Área:')
 def load_data_5(nrows):
     datos_5 = pd.read_csv('./data/REPITENCIAS_POR_AREA.csv', nrows=nrows)
     datos_5.fillna(0, inplace=True)
-    datos_5 = datos_5.sort_values('1 repitencia',ascending=False)
+    datos_5 = datos_5.sort_values('Primera repitencia',ascending=False)
     return datos_5
 
 df_load_state = st.text('Cargando data ...')
@@ -133,7 +133,7 @@ if st.checkbox('Mostrar datos 5'):
     st.write(datos_5)
 
 df_5 = pd.read_csv('./data/REPITENCIAS_POR_AREA.csv')
-df_5 = df_5.sort_values('1 repitencia', ascending=False)
+df_5 = df_5.sort_values('Primera repitencia', ascending=False)
 
 from plotly import graph_objects as go
 
