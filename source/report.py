@@ -73,8 +73,6 @@ if st.checkbox('Mostrar datos 3'):
     st.write(datos_3)
 
 df_3 = pd.read_csv('./data/REPITENCIAS_POR_FACULTAD.csv')
-df_3.fillna(0, inplace=True)
-st.write(df_3)
 
 fig_3 = px.line(df_3, x= 'Facultad', y=df_3.columns[1:7], width=1000, height=600, markers=True,
                     color_discrete_sequence = px.colors.qualitative.Light24_r)
