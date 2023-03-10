@@ -156,7 +156,7 @@ st.subheader('6. Intervalos de Porcentajes por crédito aprobados:')
 def load_data_6(nrows):
     datos_6 = pd.read_csv('./data/PORCENTAJE_DE_CREDITOS_APROBADOS_POR_AREA.csv', nrows=nrows)
     datos_6.fillna(0, inplace=True)
-    datos_6 = datos_6.sort_values('Primera repitencia',ascending=False)
+    #datos_6 = datos_6.sort_values('Primera repitencia',ascending=False)
     return datos_6
 
 df_load_state = st.text('Cargando data ...')
