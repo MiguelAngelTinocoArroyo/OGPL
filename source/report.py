@@ -210,21 +210,6 @@ st.plotly_chart(fig_7)
 # --------------------------------------------------------------------------------------------------------
 st.subheader('8. Top 20 de Cursos con mayor número de Repitencias:')
 
-@st.cache(allow_output_mutation=True)
-def load_data_8(nrows):
-    datos_8 = pd.read_csv('./data/REPITENCIAS_POR_CURSO.csv', nrows=nrows)
-    #datos_8 = datos_8.sort_values('Total Repitencias',ascending=False)
-    #datos_8.reset_index(drop=True)
-    return datos_8
-
-df_load_state = st.text('Cargando data ....')
-datos_8 = load_data_8(60)
-
-if st.checkbox('Mostrar datos 8'):
-    st.subheader('Datos 8')
-    st.write(datos_8)
-
-
 df_8 = pd.read_csv('./data/REPITENCIAS_POR_CURSO.csv')
 df_8 = df_8.sort_values('Total Repitencias',ascending=False)
 df_8 = df_8.reset_index(drop=True)
@@ -243,6 +228,20 @@ st.plotly_chart(fig_8)
 # -------------------------------------------------------------------------------------
 
 st.subheader('9. Cantidad de estudiantes invictos vs repitentes:')
+
+@st.cache(allow_output_mutation=True)
+def load_data_9(nrows):
+    datos_9 = pd.read_csv('./data/INVICTOS_VS_REPITENTES.csv', nrows=nrows)
+    return datos_9
+
+df_load_state = st.text('Cargando data ...')
+datos_9 = load_data_9(10)
+
+if st.checkbox('Mostrar datos 7'):
+    st.subheader('Datos 9')
+    st.write(datos_9)
+
+
 
 df_9 = pd.read_csv('./data/INVICTOS_VS_REPITENTES.csv')
 st.write(df_9)
