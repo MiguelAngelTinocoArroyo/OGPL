@@ -216,7 +216,7 @@ def load_data_8(nrows):
     datos_8 = datos_8.reset_index(drop=True)
     return datos_8
 
-df_load_state = st.text('Cargando data ...')
+df_load_state = st.text('Cargando data ....')
 datos_8 = load_data_8(20)
 
 if st.checkbox('Mostrar datos 8'):
