@@ -229,6 +229,20 @@ st.plotly_chart(fig_8)
 
 st.subheader('9. Cantidad de estudiantes invictos vs repitentes:')
 
+@st.cache(allow_output_mutation=True)
+def load_data_9(nrows):
+    datos_9 = pd.read_csv('./data/INVICTOS_VS_REPITENTES.csv', nrows=nrows)
+    return datos_9
+
+df_load_state = st.text('Cargando data ...')
+datos_9 = load_data_9(20)
+
+if st.checkbox('Mostrar datos 9'):
+    st.subheader('Datos 9')
+    st.write(datos_9)
+
+
+
 df_9 = pd.read_csv('./data/INVICTOS_VS_REPITENTES.csv')
 st.write(df_9)
 
