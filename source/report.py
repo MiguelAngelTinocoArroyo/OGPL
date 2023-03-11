@@ -241,10 +241,7 @@ if st.checkbox('Mostrar datos 9'):
     st.subheader('Datos 9')
     st.write(datos_9)
 
-
-
 df_9 = pd.read_csv('./data/INVICTOS_VS_REPITENTES.csv')
-st.write(df_9)
 
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
