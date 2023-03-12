@@ -53,7 +53,7 @@ if st.checkbox('Mostrar datos 2'):
 
 fig_2 = px.line(df_2, x = 'Año', y=df_2.columns[1:7], width=900, height=460,markers=True,
                     color_discrete_sequence = px.colors.qualitative.Light24)
-fig_2.update_layout(xaxis_title= 'Año de Ingreso', yaxis_title='Cantidad de Repitencias',
+fig_2.update_layout(xaxis_title= 'Año de Ingreso', yaxis_title='Estudiantes',
                         legend_title='Número de Repitencias')
 st.plotly_chart(fig_2) 
 
@@ -264,7 +264,7 @@ st.plotly_chart(fig_9)
 
 ### -------------------------------------------------------------------------------------
 
-st.subheader('10. Intervalos de Porcentajes por crédito aprobados:')
+st.subheader('10. Estado de Permanencia por Año de Ingreso:')
 
 df_10 = pd.read_csv('./data/PERMANENCIA_ANIO_INGRESO.csv')
 df_10.fillna(0, inplace=True)
