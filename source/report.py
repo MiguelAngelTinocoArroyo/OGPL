@@ -7,8 +7,8 @@ st.set_page_config(layout="wide") # Modo Ancho de Streamlit
 st.title('Reporte de Informe mediante Gráficos')
 
 # ------------------------------------------------------------------------------------------
-st.subheader('1. Repitencias más Críticas por estudiante:')
-st.text('Para la siguiente gráfica se tomó un solo curso, el cual presenta mayor número de repitencias en el estudiante.')
+st.subheader('1. Repitencias más críticas por estudiantes:')
+
 @st.cache(allow_output_mutation=True)
 def load_data_1(nrows):
     datos_1 = pd.read_csv('./data/REPITENCIAS_CRITICAS.csv', nrows=nrows)
@@ -33,8 +33,8 @@ fig_1.update_traces(textposition = 'top center')
 st.plotly_chart(fig_1) 
 
 #-------------------------------------------------------------------------------------------
-st.subheader('2. Cantidad de Número de Repitencias por Año de Ingreso:')
-st.text('Para la siguiente gráfica se tomó los valores en total de Repitencias')
+st.subheader('2. Número de repitencias totales por año de ingreso:')
+
 @st.cache(allow_output_mutation=True)
 def load_data_2(nrows):
     datos_2 = pd.read_csv('./data/REPITENCIAS_POR_ANIO_INGRESO.csv', nrows=nrows)
@@ -58,7 +58,7 @@ fig_2.update_layout(xaxis_title= 'Año de Ingreso', yaxis_title='Estudiantes',
 st.plotly_chart(fig_2) 
 
 # -----------------------------------------------------------------------------------------
-st.subheader('3. Cantidad de Número de Repitencias por Facultad:')
+st.subheader('3. Número de estudiantes por número de repitencias según facultades:')
 
 @st.cache(allow_output_mutation=True)
 def load_data_3(nrows):
@@ -82,7 +82,7 @@ fig_3.update_layout(xaxis_title= 'Facultad', yaxis_title='Cantidad de Repitencia
 st.plotly_chart(fig_3)
 
 # -----------------------------------------------------------------------------------------
-st.subheader('4. Top 10 de Nombre de Programa con mayores Repitencias:')
+st.subheader('4. Top 10 de Programas con mayor número de repitencias:')
 
 @st.cache(allow_output_mutation=True)
 def load_data_4(nrows):
@@ -115,7 +115,7 @@ fig_4.update_layout(uniformtext_minsize=12, uniformtext_mode='hide')
 st.plotly_chart(fig_4)
 
 # ------------------------------------------------------------------------------------------------------------------
-st.subheader('5. Repitencias por Área:')
+st.subheader('5. Número de alumnos por número de repitencias según áreas académicas:')
 
 @st.cache(allow_output_mutation=True)
 def load_data_5(nrows):
@@ -150,7 +150,7 @@ fig_5.add_trace(go.Funnel(name='Tercera repitencia', orientation='h',y = df_5['�
 st.plotly_chart(fig_5)
 
 #----------------------------------------------------------------------------------------------------------
-st.subheader('6. Intervalos de Porcentajes por crédito aprobados:')
+st.subheader('6. Porcentajes de créditos aprobados según Área Académica:')
 
 @st.cache(allow_output_mutation=True)
 def load_data_6(nrows):
@@ -177,7 +177,7 @@ fig_6.update_layout(xaxis_title= 'Área Académica', yaxis_title='Cantidad de Po
 st.plotly_chart(fig_6)
 # --------------------------------------------------------------------------------------------------------
 
-st.subheader('7. Top 10 de Facultades con mayores Repitencias:')
+st.subheader('7. Top 10 de Facultades con mayor número de repitencias:')
 
 df_7 = pd.read_csv('./data/TOTAL_DE_REPITENCIAS_POR_FACULTAD.csv')
 df_7 = df_7.sort_values('Repitencias',ascending=False)
@@ -195,7 +195,7 @@ fig_7.update_layout(margin=dict(t=110))
 st.plotly_chart(fig_7)
 
 # --------------------------------------------------------------------------------------------------------
-st.subheader('8. Top 20 de Cursos con mayor número de Repitencias:')
+st.subheader('8. Top 20 de cursos con mayor número de repitencias:')
 
 df_8 = pd.read_csv('./data/REPITENCIAS_POR_CURSO.csv')
 df_8 = df_8.sort_values('Total Repitencias',ascending=False)
@@ -214,7 +214,7 @@ st.plotly_chart(fig_8)
 
 # -------------------------------------------------------------------------------------
 
-st.subheader('9. Cantidad de estudiantes invictos vs repitentes:')
+st.subheader('9. Estudiantes Invictos vs estudiantes con Repitencias:')
 
 @st.cache(allow_output_mutation=True)
 def load_data_9(nrows):
@@ -264,7 +264,7 @@ st.plotly_chart(fig_9)
 
 ### -------------------------------------------------------------------------------------
 
-st.subheader('10. Estado de Permanencia por Año de Ingreso:')
+st.subheader('10. Estado de Permanencia de los estudiantes según años de estudio:')
 
 df_10 = pd.read_csv('./data/PERMANENCIA_ANIO_INGRESO.csv')
 df_10.fillna(0, inplace=True)
