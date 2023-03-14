@@ -4,7 +4,7 @@ import streamlit as st
 from plotly import graph_objects as go
 
 st.set_page_config(layout="wide") # Modo Ancho de Streamlit
-st.title('Reporte de Informe mediante Gráficos')
+st.title('Seguimiento a estudiantes con problemas de repitencias. Prematrícula 2023-0')
 
 # ------------------------------------------------------------------------------------------
 st.subheader('1. Repitencias más críticas por estudiante:')
