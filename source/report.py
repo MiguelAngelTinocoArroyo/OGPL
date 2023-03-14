@@ -212,6 +212,23 @@ st.plotly_chart(fig_7)
 # --------------------------------------------------------------------------------------------------------
 st.subheader('8. Top 20 de cursos con mayor número de repitencias:')
 
+#####################################################################
+@st.cache(allow_output_mutation=True)
+def load_data_8(nrows):
+    datos_8 = pd.read_csv('./data/REPITENCIAS_POR_CURSO.csv', nrows=nrows)
+    datos_8 = datos_8.sort_values(by="Total Repitencias",ascending=False)
+    datos_8 = datos_8.reset_index(drop=True)
+    return datos_8
+
+df_load_state = st.text('Cargando data ...')
+datos_8 = load_data_8(3356)
+
+if st.checkbox('Mostrar datos 8'):
+    st.subheader('Datos 8')
+    st.write(datos_8)
+
+#####################################################################
+
 df_8 = pd.read_csv('./data/REPITENCIAS_POR_CURSO.csv')
 df_8 = df_8.sort_values('Total Repitencias',ascending=False)
 df_8 = df_8.reset_index(drop=True)
