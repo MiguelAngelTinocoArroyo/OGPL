@@ -234,8 +234,6 @@ df_8 = df_8.sort_values('Total Repitencias',ascending=False)
 df_8 = df_8.reset_index(drop=True)
 df_8 = df_8.head(20)
 
-st.write(df_8)
-
 fig_8 = px.bar(df_8, y='Total Repitencias', x='Cursos',text_auto = True,
        orientation = 'v',color = 'Total Repitencias', color_continuous_scale = 'viridis')
 fig_8.update_layout(width=1000, height=650)
