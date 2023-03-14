@@ -188,7 +188,7 @@ def load_data_7(nrows):
     return datos_7
 
 df_load_state = st.text('Cargando data ...')
-datos_7 = load_data_7(10)
+datos_7 = load_data_7(20)
 
 if st.checkbox('Mostrar datos 7'):
     st.subheader('Datos 7')
