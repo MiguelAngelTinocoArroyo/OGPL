@@ -199,7 +199,6 @@ df_7 = pd.read_csv('./data/TOTAL_DE_REPITENCIAS_POR_FACULTAD.csv')
 df_7 = df_7.sort_values('Repitencias',ascending=False)
 df_7 = df_7.reset_index(drop=True)
 df_7 = df_7.head(10)
-st.write(df_7)
  
 fig_7 = px.line_polar(df_7, r='Repitencias', theta='Facultad',line_close=True,
                     color_discrete_sequence = px.colors.sequential.RdBu_r)
