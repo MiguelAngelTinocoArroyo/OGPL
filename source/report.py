@@ -7,7 +7,7 @@ st.set_page_config(layout="wide") # Modo Ancho de Streamlit
 st.title('Reporte de Informe mediante Gráficos')
 
 # ------------------------------------------------------------------------------------------
-st.subheader('1. Repitencias más críticas por estudiantes:')
+st.subheader('1. Repitencias más críticas por estudiante:')
 
 @st.cache(allow_output_mutation=True)
 def load_data_1(nrows):
