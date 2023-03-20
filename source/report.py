@@ -193,8 +193,9 @@ datos_7 = load_data_7(10)
 if st.checkbox('Mostrar datos 7'):
     st.subheader('Datos 7')
     st.write(datos_7)
-
+st.write(datos_7)
 ####################################################################
+'''
 df_7 = pd.read_csv('./data/TOTAL_DE_REPITENCIAS_POR_FACULTAD.csv')
 df_7 = df_7.sort_values('Repitencias',ascending=False)
 df_7 = df_7.reset_index(drop=True)
@@ -208,7 +209,7 @@ fig_7.update_layout(width=900, height=550)
 fig_7.update_layout(margin=dict(t=110))
 
 st.plotly_chart(fig_7)
-
+'''
 # --------------------------------------------------------------------------------------------------------
 st.subheader('8. Top 20 de cursos con mayor número de repitencias:')
 
